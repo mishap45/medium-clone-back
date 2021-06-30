@@ -10,6 +10,24 @@ export class User {
 
   @Prop()
   password: string;
+
+  @Prop()
+  twitter?: string;
+
+  @Prop()
+  gitHub?: string;
+
+  @Prop()
+  linkedin?: string;
+
+  @Prop()
+  facebook?: string;
+
+  @Prop()
+  instagram?: string;
+
+  @Prop()
+  photo?: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
