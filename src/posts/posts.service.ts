@@ -19,19 +19,15 @@ export class PostsService {
   }
 
   async getPostByName(name: string): Promise<PostMedium[]> {
-    return this.postModel.find((e) => e.name === name);
+    return this.postModel.find({ name });
   }
 
   async getPostByCreator(postCreator: string): Promise<PostMedium[]> {
-    return this.postModel.find(
-      (e) => e.postCreator.toLowerCase() === postCreator.toLowerCase(),
-    );
+    return this.postModel.find({ postCreator });
   }
 
   async getPostByTopic(topic: string): Promise<PostMedium[]> {
-    return this.postModel.find(
-      (e) => e.topic.toLowerCase() === topic.toLowerCase(),
-    );
+    return this.postModel.find({ topic });
   }
 
   async createPost(postDto: CreatePostDto): Promise<PostMedium> {

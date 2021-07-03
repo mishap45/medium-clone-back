@@ -30,14 +30,14 @@ export class PostsController {
     return this.postService.getPostByName(name);
   }
 
-  @Get(':postCreator')
+  @Get('/post-by-postCreator/:postCreator')
   getPostByCreator(
     @Param('postCreator') postCreator: string,
   ): Promise<PostMedium[]> {
     return this.postService.getPostByCreator(postCreator);
   }
 
-  @Get(':topic')
+  @Get('/post-by-topic/:topic')
   getPostByTopic(@Param('topic') topic: string): Promise<PostMedium[]> {
     return this.postService.getPostByTopic(topic);
   }
